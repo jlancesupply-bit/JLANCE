@@ -150,3 +150,13 @@ body{
   vertical-align: middle;
 }
 
+.call-link {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.call-link:hover {
+  text-decoration: underline;
+}
+
