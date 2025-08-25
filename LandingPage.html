@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JLANCE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="favicon.png" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="All my links in one page." />
+</head>
+<body>
+  <main class="card">
+    <!-- Logo -->
+    <img class="logo" src="logo.png" alt="Brand Logo" />
+
+    <!-- Name / Tagline -->
+    <h1 class="title">JLANCE</h1>
+    <small>Construction Supplies Trading</small>
+    <br>
+    <br>
+<br>
+   
+
+    <!-- Links -->
+    <nav class="links">
+  <a class="btn" href="https://drive.google.com/file/d/1bywSTXMliGWyMwWggCZhOp_TegT8RIIj/preview" target="_blank" rel="noopener">
+    <i class="fas fa-book"></i> Catalog
+  </a>
+  
+  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSchTUdJxpOgWZLBYn8XEmqbiWxzgbqkE5Ao8y-3aZrWP7ylYw/viewform?usp=header" target="_blank" rel="noopener">
+    <i class="fas fa-file-signature"></i> Get a Quote
+  </a>
+  
+  <a class="btn" href="#" id="callBtn">
+    <i class="fas fa-phone"></i> Call Us
+  </a>
+  
+  <a class="btn" href="https://www.facebook.com/jlancesupply" target="_blank" rel="noopener">
+    <i class="fab fa-facebook"></i> Facebook
+  </a>
+  
+  <a class="btn" href="https://sites.google.com/view/jlancesupply/home" target="_blank" rel="noopener">
+    <i class="fas fa-globe"></i> Website
+  </a>
+</nav>
+
+
+   <div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close">&times;</span>
+    <h2>CALL NOW</h2>
+    <h3>ASLANIE ALUG</h3>
+    <p><strong>Sales Manager · JLANCE Construction Supplies Trading</strong></p>
+    <p>📧 jlacesupply@gmail.com</p>
+    <p>📞 +639065271845</p>
+    <p>📍 Zone Leo Brgy. Suarez, Iligan City, Lanao del Norte, Philippines, 9200</p>
+    <p>⏰ 8:00 am – 5:00 pm</p>
+
+    <button onclick="alert('Contact saved!')">Save to contacts</button>
+  </div>
+</div>
+ 
+<br>
+<br>
+    <!-- Footer -->
+    <footer class="footer">
+      <small>© <span id="year"></span> JLANCE. All rights reserved.</small>
+    </footer>
+  </main>
+  
+<script>
+  // open popup
+  document.getElementById('callBtn').onclick = function(){
+    document.getElementById('popup').style.display = 'flex';
+  }
+  // close popup
+  document.getElementById('closePopup').onclick = function(){
+    document.getElementById('popup').style.display = 'none';
+  }
+  // close when clicking outside popup
+  window.onclick = function(event){
+    if(event.target == document.getElementById('popup')){
+      document.getElementById('popup').style.display = 'none';
+    }
+  }
+</script>
+
+  <script>
+    // Auto year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
