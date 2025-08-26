@@ -4,98 +4,117 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JLANCE</title>
+  
+  <!-- Meta -->
+  <meta name="description" content="All my links in one page." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" type="image/png" href="favicon.png" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="All my links in one page." />
 </head>
 <body>
   <main class="card">
+    
     <!-- Logo -->
     <img class="logo" src="logo.png" alt="Brand Logo" />
 
     <!-- Name / Tagline -->
     <h1 class="title">JLANCE</h1>
     <small>Construction Supplies Trading</small>
-    <br>
-    <br>
-<br>
-   
+    <br><br><br>
 
     <!-- Links -->
     <nav class="links">
-  <a class="btn" href="https://drive.google.com/file/d/1bywSTXMliGWyMwWggCZhOp_TegT8RIIj/preview" target="_blank" rel="noopener">
-    <i class="fas fa-book"></i> Catalog
-  </a>
-  
-  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSchTUdJxpOgWZLBYn8XEmqbiWxzgbqkE5Ao8y-3aZrWP7ylYw/viewform?usp=header" target="_blank" rel="noopener">
-    <i class="fas fa-file-signature"></i> Get a Quote
-  </a>
-  
-  <a class="btn" href="#" id="callBtn">
-    <i class="fas fa-phone"></i> Call Us
-  </a>
-  
-  <a class="btn" href="https://www.facebook.com/jlancesupply" target="_blank" rel="noopener">
-    <i class="fab fa-facebook"></i> Facebook
-  </a>
-  
-  <a class="btn" href="https://sites.google.com/view/jlancesupply/home" target="_blank" rel="noopener">
-    <i class="fas fa-globe"></i> Website
-  </a>
-</nav>
+      <a class="btn" href="https://drive.google.com/file/d/1bywSTXMliGWyMwWggCZhOp_TegT8RIIj/preview" target="_blank" rel="noopener">
+        <i class="fas fa-book"></i> Catalog
+      </a>
+      
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSchTUdJxpOgWZLBYn8XEmqbiWxzgbqkE5Ao8y-3aZrWP7ylYw/viewform?usp=header" target="_blank" rel="noopener">
+        <i class="fas fa-file-signature"></i> Get a Quote
+      </a>
+      
+      <a class="btn" href="#" id="callBtn">
+        <i class="fas fa-phone"></i> Call Us
+      </a>
+      
+      <a class="btn" href="https://www.facebook.com/jlancesupply" target="_blank" rel="noopener">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      
+      <a class="btn" href="https://sites.google.com/view/jlancesupply/home" target="_blank" rel="noopener">
+        <i class="fas fa-globe"></i> Website
+      </a>
+    </nav>
 
+    <!-- Popup -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span id="closePopup" class="close">&times;</span>
+        <h2>CALL NOW</h2>
+        <h3>SALES ENGINEER</h3>
+        <p>📧 jlacesupply@gmail.com</p>
+        <p>📞 <a href="tel:+639065271845" class="call-link">+63 906 527 1845</a></p>
+        <p>📍 Zone Leo Brgy. Suarez, Iligan City, Lanao del Norte, Philippines, 9200</p>
+        <p>⏰ 8:00 am – 5:00 pm</p>
+      </div>
+    </div>
 
-   <div id="popup" class="popup">
-  <div class="popup-content">
-    <span id="closePopup" class="close">&times;</span>
-    <h2>CALL NOW</h2>
-    <h3>SALES ENGINEER</h3>
-    <p>📧 jlacesupply@gmail.com</p>
-    <p>📞 <a href="tel:+639065271845" class="call-link">+639065271845 </a></p>
-    <p>📍 Zone Leo Brgy. Suarez, Iligan City, Lanao del Norte, Philippines, 9200</p>
-    <p>⏰ 8:00 am – 5:00 pm</p>
-  </div>
+    <!-- Facebook Like Button (centered) -->
+    <div class="fb-like-container">
+  <iframe 
+    src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fjlancesupply&width=160&layout=button&action=like&size=large&share=true&height=35&appId" 
+    width="160" height="35" 
+    style="border:none;overflow:hidden" 
+    scrolling="no" 
+    frameborder="0" 
+    allowfullscreen="true" 
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+  </iframe>
 </div>
- 
-<br>
-    
-    <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fjlancesupply&width=450&layout&action&size&share=true&height=35&appId" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-<br>
+
+
     <!-- Footer -->
     <footer class="footer">
       <small>© <span id="year"></span> JLANCE. All rights reserved.</small>
     </footer>
   </main>
   
-  
-<script>
-  // open popup
-  document.getElementById('callBtn').onclick = function(){
-    document.getElementById('popup').style.display = 'flex';
-  }
-  // close popup
-  document.getElementById('closePopup').onclick = function(){
-    document.getElementById('popup').style.display = 'none';
-  }
-  // close when clicking outside popup
-  window.onclick = function(event){
-    if(event.target == document.getElementById('popup')){
+  <!-- Scripts -->
+  <script>
+    // Open popup
+    document.getElementById('callBtn').onclick = function() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    // Close popup
+    document.getElementById('closePopup').onclick = function() {
       document.getElementById('popup').style.display = 'none';
     }
-  }
-</script>
 
-  <script>
+    // Close when clicking outside popup
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('popup')) {
+        document.getElementById('popup').style.display = 'none';
+      }
+    }
+
     // Auto year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
 
+  <!-- Facebook SDK (optional) -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
 </body>
 </html>
+
+
 
 
 
