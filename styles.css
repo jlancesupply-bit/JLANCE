@@ -1,162 +1,118 @@
-/* Color palette */
-:root{
-  --ink:#0d2c54;      /* deep navy */
-  --accent:#247ba0;   /* blue */
-  --white:#ffffff;    /* white */
-  --bg: #0d2c54;      /* page bg uses ink */
-  --btn: #247ba0;     /* button bg */
-  --btn-text: #ffffff;
-  --btn-hover: #1d6785;
-  --ring: rgba(36,123,160,.35);
+/* ---------------------------
+   GLOBAL STYLES
+---------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:
-    radial-gradient(1200px 800px at 50% -10%, rgba(255,255,255,.07), transparent 60%),
-    linear-gradient(180deg, #0f376a 0%, var(--bg) 60%);
-  color:var(--white);
-  display:grid;
-  place-items:center;
-  padding:24px;
+/* ---------------------------
+   MAIN CARD
+---------------------------- */
+.card {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Card container */
-.card{
-  width:min(640px, 100%);
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter: blur(8px);
-  border-radius:24px;
-  padding:32px 24px;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
 }
 
-/* Logo */
-.logo{
-  width:96px;
-  height:96px;
-  object-fit:contain;
-  border-radius:20px;
-  background:rgba(255,255,255,.12);
-  padding:10px;
-  border:1px solid rgba(255,255,255,.2);
-  margin:0 auto 14px;
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
-/* Title / Tagline */
-.title{
-  margin:6px 0 4px;
-  font-weight:800;
-  letter-spacing:.2px;
-  font-size:28px;
-  color:var(--white);
-}
-.tagline{
-  margin:0 0 22px;
-  color:rgba(255,255,255,.85);
-  font-size:14px;
+/* ---------------------------
+   LINKS / BUTTONS
+---------------------------- */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
 }
 
-/* Links */
-.links{
-  display:grid;
-  gap:14px;
-  margin: 0 0 12px;
-}
-.btn{
-  display:block;
-  width:100%;
-  padding:14px 18px;
-  background:var(--btn);
-  color:var(--btn-text);
-  text-decoration:none;
-  font-weight:700;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.18);
-  transform:translateZ(0);
-  transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
-  box-shadow:0 8px 20px rgba(36,123,160,.35);
-}
-.btn:focus{
-  outline: none;
-  box-shadow:0 0 0 6px var(--ring), 0 8px 20px rgba(36,123,160,.35);
-}
-.btn:hover{
-  background:var(--btn-hover);
-  transform:translateY(-1px);
-  border-color:rgba(255,255,255,.32);
-}
-.btn:active{
-  transform:translateY(0);
-  box-shadow:0 4px 12px rgba(36,123,160,.3);
+.btn {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: #fff;
+  background: #247ba0;       /* Main brand color */
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-/* Footer */
-.footer{
-  margin-top:18px;
-  color:rgba(255,255,255,.7);
+.btn:hover {
+  background: #0d2c54;       /* Darker shade on hover */
 }
 
-/* Small screens */
-@media (max-width:420px){
-  .title{font-size:24px}
-  .logo{width:84px;height:84px}
-}
-
-/* Popup overlay */
+/* ---------------------------
+   POPUP MODAL
+---------------------------- */
 .popup {
-  display: none; /* stay hidden until triggered */
+  display: none;
   position: fixed;
-  top: 0; left: 0;
+  z-index: 1000;
+  left: 0; top: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 
-
-/* Popup box */
 .popup-content {
   background: #fff;
-  color: #000;
   padding: 20px;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 400px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   text-align: center;
-  position: relative;
-  font-family: Arial, sans-serif;
 }
 
-/* Close button */
 .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
-  font-weight: bold;
+  float: right;
+  font-size: 20px;
   cursor: pointer;
-}
-
-.btn i {
-  margin-right: 10px;
-  font-size: 18px;
-  vertical-align: middle;
+  color: #333;
 }
 
 .call-link {
-  color: var(--accent);
   font-weight: bold;
+  color: #247ba0;
   text-decoration: none;
 }
 
 .call-link:hover {
   text-decoration: underline;
 }
+
+/* ---------------------------
+   FACEBOOK LIKE BUTTON
+---------------------------- */
+.fb-like-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* ---------------------------
+   FOOTER
+---------------------------- */
+.footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
 
