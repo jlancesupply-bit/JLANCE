@@ -4,95 +4,95 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JLANCE</title>
-  
+
   <!-- Meta -->
   <meta name="description" content="All my links in one page." />
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
-  
+
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-  <div id="fb-root"></div>
   <main class="card">
-    
     <!-- Logo -->
-    <img class="logo" src="logo.png" alt="Brand Logo" />
+    <img class="logo" src="logo.png" alt="JLANCE Logo" />
 
     <!-- Name / Tagline -->
     <h1 class="title">JLANCE</h1>
     <small class="subtitle">Construction Supplies Trading</small>
-    <br><br><br>
 
     <!-- Links -->
     <nav class="links">
       <a class="btn" href="https://drive.google.com/file/d/1bywSTXMliGWyMwWggCZhOp_TegT8RIIj/preview" target="_blank" rel="noopener">
-        <i class="fas fa-book"></i> <span>Catalog</span>
+        <i class="fas fa-book"></i>
+        <span>Catalog</span>
       </a>
-      
       <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSchTUdJxpOgWZLBYn8XEmqbiWxzgbqkE5Ao8y-3aZrWP7ylYw/viewform?usp=header" target="_blank" rel="noopener">
-        <i class="fas fa-file-signature"></i> <span>Get a Quote</span>
+        <i class="fas fa-file-signature"></i>
+        <span>Get a Quote</span>
       </a>
-      
       <a class="btn" href="#" id="callBtn">
-        <i class="fas fa-phone"></i> <span>Call Us</span>
+        <i class="fas fa-phone"></i>
+        <span>Call Us</span>
       </a>
-      
       <a class="btn" href="https://www.jlance.ph/" target="_blank" rel="noopener">
-        <i class="fas fa-globe"></i> <span>Website</span>
+        <i class="fas fa-globe"></i>
+        <span>Website</span>
       </a>
-
       <a class="btn" href="https://www.facebook.com/jlancesupply" target="_blank" rel="noopener">
-        <i class="fab fa-facebook"></i> <span>Facebook</span>
+        <i class="fab fa-facebook"></i>
+        <span>Facebook</span>
       </a>
     </nav>
 
     <!-- Popup -->
-    <div id="popup" class="popup">
+    <div id="popup" class="popup" style="display:none;">
       <div class="popup-content">
-        <span id="closePopup" class="close">&times;</span>
+        <button id="closePopup" class="close" aria-label="Close">&times;</button>
         <h2>CALL NOW</h2>
-        <h3>SALES ENGINEER</h3>
-        <p>📧 admin@jlance.ph</p>
-        <p>📞 <a href="tel:+639065271845" class="call-link">+63 906 527 1845</a></p>
-        <p>📍 Zone Leo Brgy. Suarez, Iligan City, Lanao del Norte, Philippines, 9200</p>
-        <p>⏰ 8:00 am – 5:00 pm</p>
+        <h3>Sales Engineer</h3>
+        <p><i class="fas fa-envelope"></i> admin@jlance.ph</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+639065271845" class="call-link">+63 906 527 1845</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Zone Leo Brgy. Suarez, Iligan City, Lanao del Norte, Philippines, 9200</p>
+        <p><i class="fas fa-clock"></i> 8:00 am – 5:00 pm</p>
       </div>
     </div>
-
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© <span id="year"></span> JLANCE. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> JLANCE. All rights reserved.</p>
   </footer>
 
   <!-- Scripts -->
   <script>
-    // Open popup
-    document.getElementById('callBtn').onclick = function() {
-      document.getElementById('popup').style.display = 'flex';
-    }
+    // Popup open/close logic
+    const callBtn = document.getElementById('callBtn');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('closePopup');
 
-    // Close popup
-    document.getElementById('closePopup').onclick = function() {
-      document.getElementById('popup').style.display = 'none';
-    }
+    callBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.style.display = 'flex';
+    });
 
-    // Close when clicking outside popup
-    window.onclick = function(event) {
-      if (event.target == document.getElementById('popup')) {
-        document.getElementById('popup').style.display = 'none';
+    closePopup.addEventListener('click', function () {
+      popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+      if (event.target === popup) {
+        popup.style.display = 'none';
       }
-    }
+    });
 
-    // Auto year
+    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
