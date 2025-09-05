@@ -114,21 +114,6 @@
       </div>
     </div>
 
-    <!-- Follow Facebook Modal -->
-    <div id="modalFollowBg" class="modal-follow-bg">
-      <div class="modal-follow">
-        <span id="closeFollow" class="close-follow">&times;</span>
-        <a class="fb-follow-btn" href="https://www.facebook.com/jlancesupply" target="_blank">
-          <i class="fab fa-facebook"></i> Follow us on Facebook
-        </a>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <small>© <span id="year"></span> JLANCE. All rights reserved.</small>
-    </footer>
-  </main>
   
   <!-- Scripts -->
   <script>
@@ -155,21 +140,9 @@
     // Auto year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Facebook follow modal logic
-    function showFollowModal(e) {
-      e.preventDefault();
-      document.getElementById('modalFollowBg').style.display = 'flex';
-    }
-    document.querySelectorAll('a.btn, button').forEach(function(el) {
-      el.addEventListener('click', showFollowModal);
-    });
-    document.getElementById('closeFollow').onclick = function() {
-      document.getElementById('modalFollowBg').style.display = 'none';
-    }
+    
   </script>
-  <script>
-    alert("JLANCE Landing Page");
-  </script>
+
 </body>
 </html>
 
