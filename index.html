@@ -17,10 +17,54 @@
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .modal-follow-bg {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-follow {
+      background: #fff;
+      padding: 2em 2em 1.5em 2em;
+      border-radius: 8px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 320px;
+      position: relative;
+    }
+    .modal-follow .close-follow {
+      position: absolute;
+      top: 8px; right: 12px;
+      font-size: 1.5em;
+      color: #333;
+      cursor: pointer;
+    }
+    .modal-follow button,
+    .modal-follow .fb-follow-btn {
+      margin-top: 1em;
+      background: #1877f2;
+      color: #fff;
+      border: none;
+      padding: 0.7em 1.5em;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .modal-follow button:hover,
+    .modal-follow .fb-follow-btn:hover {
+      background: #145db2;
+    }
+  </style>
 </head>
 <body>
   <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0&appId=APP_ID"></script>
   <main class="card">
     
     <!-- Logo -->
@@ -69,6 +113,16 @@
       </div>
     </div>
 
+    <!-- Follow Facebook Modal -->
+    <div id="modalFollowBg" class="modal-follow-bg">
+      <div class="modal-follow">
+        <span id="closeFollow" class="close-follow">&times;</span>
+        <a class="fb-follow-btn" href="https://www.facebook.com/jlancesupply" target="_blank">
+          <i class="fab fa-facebook"></i> Follow us on Facebook
+        </a>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
       <small>© <span id="year"></span> JLANCE. All rights reserved.</small>
@@ -92,19 +146,32 @@
       if (event.target == document.getElementById('popup')) {
         document.getElementById('popup').style.display = 'none';
       }
+      if (event.target == document.getElementById('modalFollowBg')) {
+        document.getElementById('modalFollowBg').style.display = 'none';
+      }
     }
 
     // Auto year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Facebook follow modal logic
+    function showFollowModal(e) {
+      e.preventDefault();
+      document.getElementById('modalFollowBg').style.display = 'flex';
+    }
+    document.querySelectorAll('a.btn, button').forEach(function(el) {
+      el.addEventListener('click', showFollowModal);
+    });
+    document.getElementById('closeFollow').onclick = function() {
+      document.getElementById('modalFollowBg').style.display = 'none';
+    }
   </script>
   <script>
-        alert("JLANCE Landing Page");
-      </script>
-
-<div class="fb-page" data-href="https://www.facebook.com/jlancesupply" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/jlancesupply" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/jlancesupply">Solar Streets Lights</a></blockquote></div>
-  
+    alert("JLANCE Landing Page");
+  </script>
 </body>
 </html>
+
 
 
 
